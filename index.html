@@ -125,7 +125,7 @@ button{cursor:pointer}
 <div id="photoChallenge" class="hidden">
  <div class="tree">📸</div>
  <h1>Papas Foto-Challenge</h1>
- <p class="subtitle">Mache nacheinander fünf Fotos. Fotografiere jeweils den Gegenstand, der angezeigt wird.</p>
+ <p class="subtitle">Mache nacheinander fünf Fotos: Kugelschreiber, Messer, Baum, Fisch und Laptop. Fotografiere jeweils den Gegenstand, der angezeigt wird.</p>
  <h2 id="photoTask">1 von 5: Kugelschreiber</h2>
  <p class="subtitle" id="photoHint">Halte den Gegenstand ins Kamerabild und drücke auf „Foto aufnehmen“.</p>
  <div class="camera-box">
@@ -257,7 +257,7 @@ const game=document.getElementById("game");
 const finished=document.getElementById("finished");
 
 function storageKey(){
- return "weihnachtsgeheimnis_2026_version_16_"+person;
+ return "weihnachtsgeheimnis_2026_version_17_"+person;
 }
 
 function saveProgress(){
@@ -401,7 +401,7 @@ function nextQuestion(){
 }
 
 // Papas persönliche Foto-Challenge
-const photoTasks=["Kugelschreiber","Messer","Fernseher","Fisch","Baum"];
+const photoTasks=["Kugelschreiber","Messer","Baum","Fisch","Laptop"];
 let photoIndex=0;
 let photoStream=null;
 let capturedPhotos=[];
