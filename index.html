@@ -322,6 +322,8 @@ function updateStats(){
 
 function renderQuestion(){
  answered=false;
+ finished.classList.add("hidden");
+ document.getElementById("allDoors").innerHTML="";
  const item=mission.questions[current];
  updateStats();
  document.getElementById("question").textContent=item.q;
