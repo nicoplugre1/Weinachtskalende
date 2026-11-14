@@ -230,9 +230,9 @@ luni:{
 const baseUrl = 'https://nicoplugre.github.io/weihnachtsgeheimnis-2026/';
 const qrBase = 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=';
 const qrLinks = {
-  mama: `${baseUrl}?mission=mama&v=3`,
-  luna: `${baseUrl}?mission=luni&v=3`,
-  papa: `${baseUrl}?mission=papa&v=3`
+  mama: `${baseUrl}?mission=mama&v=4`,
+  luna: `${baseUrl}?mission=luni&v=4`,
+  papa: `${baseUrl}?mission=papa&v=4`
 };
 
 ['mama','luna','papa'].forEach(personName => {
@@ -305,6 +305,7 @@ function startQuiz(){
  }
  startScreen.classList.add("hidden");
  finished.classList.add("hidden");
+ document.getElementById("allDoors").innerHTML="";
  game.classList.remove("hidden");
  document.getElementById("quizWelcome").textContent="Viel Erfolg, "+mission.name+"! 🎄";
  renderQuestion();
@@ -494,6 +495,9 @@ function finishPhotoChallenge(){
 }
 
 function showFinal(){
+ if(!mission || current!==TOTAL || errors>=MAX_ERRORS)return;
+ if(person==="papa" && capturedPhotos.length!==photoTasks.length)return;
+
  game.classList.add("hidden");
  finished.classList.remove("hidden");
 
